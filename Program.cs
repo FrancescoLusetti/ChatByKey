@@ -7,6 +7,8 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using MQTTnet.AspNetCore;
+using MQTTnet.Server;
 
 namespace ApiBroker
 {
