@@ -19,6 +19,14 @@ namespace ApiBroker
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                //Crea server usando Kestrel 
+                .UseKestrel(o =>
+                {
+                    //Sente i pacchetti MQTT da ogni IP sulla porta 1883
+                    o.ListenAnyIP(1883, l => l.UseMqtt());
+                    //Sente i pacchetti HTTP su 5000
+                    o.ListenAnyIP(5000);
+                })
                 .UseStartup<Startup>();
     }
 }
