@@ -20,18 +20,16 @@ namespace ApiBroker.Controllers
 
         // POST api/Users/SignUp
         [HttpPost("SignUp")]
-        public JsonResult SignUp([FromForm] string username, [FromForm] string password)
+        public void SignUp([FromForm] string username, [FromForm] string password)
         {
             UsersHelper.InsertUser("dope", "swag");
-            return Json();
         }
 
         // POST api/Users/Login
         [HttpPost("Login")]
-        public JsonResult Login([FromForm] string username, [FromForm] string password)
+        public void Login([FromForm] string username, [FromForm] string password)
         {
             UsersHelper.Login("dope", "swag");
-            return Json();
         }
     }
 }
